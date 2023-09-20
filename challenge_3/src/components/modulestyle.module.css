@@ -1,0 +1,26 @@
+h2 {
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    background-color: rgb(36 163 182);
+}
+
+.btn:hover {
+    background-color: rgb(30, 131, 146);
+}
+
+.btn-search-icon {
+    border: none;
+    background-color: rgb(36 163 182);
+}
+
+.btn-search-icon:hover {
+    background-color: rgb(30, 131, 146);
+}
+
+.checkbox {
+    width: 100px;
+}
