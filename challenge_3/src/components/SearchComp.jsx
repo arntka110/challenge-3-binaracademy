@@ -39,6 +39,7 @@ function SearchComp({ onSearch }) {
                     {<BsSearch />}
                   </Button>
                   <Form.Control
+                    id="search"
                     type="text"
                     placeholder="Search Todo"
                     value={searchToDo}

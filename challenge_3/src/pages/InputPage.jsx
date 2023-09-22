@@ -23,6 +23,7 @@ function InputPage({ onAddTodo }) {
     if (!newTodo) return;
 
     onAddTodo(newTodo);
+    setNewTodo("");
     navigate("/");
   };
 
@@ -42,24 +43,26 @@ function InputPage({ onAddTodo }) {
               </Link>
             </Col>
           </Row>
-          <InputGroup className="p-4">
-            <InputGroup.Text id="basic-addon1">📃</InputGroup.Text>
-            <Form.Control
-              type="text"
-              placeholder="Enter your new todo"
-              value={newTodo}
-              formMethod="POST"
-              onSubmit={handleSubmit}
-              onChange={(e) => setNewTodo(e.target.value)}
-            />
-            <Button
-              variant="primary"
-              type="submit"
-              className={`mt-3 ${styles.btn}`}
-            >
-              Submit
-            </Button>
-          </InputGroup>
+          <Form onSubmit={handleSubmit}>
+            <InputGroup className="p-4">
+              <InputGroup.Text id="basic-addon1">📃</InputGroup.Text>
+              <Form.Control
+                id="add-todo"
+                type="text"
+                placeholder="Input Todo"
+                value={newTodo}
+                onChange={(e) => setNewTodo(e.target.value)}
+              />
+              <Button
+                variant="primary"
+                type="submit"
+                value="submit"
+                className={`mt-3 ${styles.btn}`}
+              >
+                Submit
+              </Button>
+            </InputGroup>
+          </Form>
         </Card.Body>
       </Card>
     </Container>

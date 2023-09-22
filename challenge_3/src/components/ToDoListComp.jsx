@@ -88,22 +88,9 @@ function ToDoListComp() {
     setTasks(filteredTasks);
   };
 
-  const handleAddTodo = (newTodo) => {
-    const newTask = {
-      id: tasks.length + 1,
-      task: newTodo,
-      complete: false,
-    };
-
-    setTasks([...tasks, newTask]);
-  };
-
   return (
     <>
       <SearchComp onSearch={handleSearchTodo} />
-      <div className="text-center">
-        <h3>TodoList</h3>
-      </div>
       <FilterComp
         onFilterDone={handleFilterDone}
         onFilterAll={handleFilterAll}
@@ -122,6 +109,7 @@ function ToDoListComp() {
                 <>
                   <InputGroup>
                     <FormControl
+                      id="editTask"
                       type="text"
                       value={editTask}
                       onChange={(e) => setEditTask(e.target.value)}
