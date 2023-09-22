@@ -91,6 +91,9 @@ function ToDoListComp() {
   return (
     <>
       <SearchComp onSearch={handleSearchTodo} />
+      <div className="text-center">
+          <h2>Todo List</h2>
+        </div>
       <FilterComp
         onFilterDone={handleFilterDone}
         onFilterAll={handleFilterAll}
