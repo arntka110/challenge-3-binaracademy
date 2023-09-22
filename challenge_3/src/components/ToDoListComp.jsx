@@ -9,6 +9,8 @@ import {
 } from "react-bootstrap";
 import { BsTrash3Fill, BsPencilFill } from "react-icons/bs";
 import toDoListJSON from "../data/toDoList.json";
+import SearchComp from "./SearchComp";
+import FilterComp from "./FilterComp";
 import DeleteComp from "./DeleteComp";
 
 function ToDoListComp() {
@@ -65,8 +67,48 @@ function ToDoListComp() {
     setTasks([]);
   };
 
+  const handleFilterDone = () => {
+    const filteredTasks = tasks.filter((task) => task.complete);
+    setTasks(filteredTasks);
+  };
+
+  const handleFilterAll = () => {
+    setTasks(toDoListJSON);
+  };
+
+  const handleFilterTodo = () => {
+    const filteredTasks = tasks.filter((task) => !task.complete);
+    setTasks(filteredTasks);
+  };
+
+  const handleSearchTodo = (searchText) => {
+    const filteredTasks = tasks.filter((task) =>
+      task.task.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setTasks(filteredTasks);
+  };
+
+  const handleAddTodo = (newTodo) => {
+    const newTask = {
+      id: tasks.length + 1,
+      task: newTodo,
+      complete: false,
+    };
+
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <>
+      <SearchComp onSearch={handleSearchTodo} />
+      <div className="text-center">
+        <h3>TodoList</h3>
+      </div>
+      <FilterComp
+        onFilterDone={handleFilterDone}
+        onFilterAll={handleFilterAll}
+        onFilterTodo={handleFilterTodo}
+      />
       <Row>
         <Form>
           {tasks.map((todo) => (

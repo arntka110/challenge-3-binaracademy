@@ -9,7 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/input" element={<InputPage />} />
+          <Route path="/add-todo" element={<InputPage />} />
 
           {/* The page for not found url path */}
           <Route
