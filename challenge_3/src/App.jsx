@@ -4,7 +4,6 @@ import HomePage from "./pages/HomePage";
 import InputPage from "./pages/InputPage";
 import toDoListJSON from "./data/toDoList.json";
 import { useState } from "react";
-// import { useEffect } from "react";
 
 export default function App() {
   const [tasks, setTasks] = useState(toDoListJSON);
