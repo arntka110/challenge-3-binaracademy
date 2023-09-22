@@ -6,25 +6,22 @@ import InputPage from "./pages/InputPage";
 export default function App() {
   return (
     <>
-      <div></div>
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/input" element={<InputPage />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/input" element={<InputPage />} />
 
-            {/* The page for not found url path */}
-            <Route
-              path="*"
-              element={
-                <h1 className="d-flex flex-row justify-content-center align-items-center vh-100">
-                  404 Page Not Found
-                </h1>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      </div>
+          {/* The page for not found url path */}
+          <Route
+            path="*"
+            element={
+              <h1 className="d-flex flex-row justify-content-center align-items-center vh-100">
+                404 Page Not Found
+              </h1>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

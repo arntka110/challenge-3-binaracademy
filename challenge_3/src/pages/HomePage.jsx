@@ -2,7 +2,6 @@ import "../components/modulestyle.module.css";
 import ToDoListComp from "../components/ToDoListComp";
 import FilterComp from "../components/FilterComp";
 import SearchComp from "../components/SearchComp";
-import DeleteComp from "../components/DeleteComp";
 import { Card, Container } from "react-bootstrap";
 
 function HomePage() {
@@ -21,7 +20,6 @@ function HomePage() {
             </div>
             <FilterComp />
             <ToDoListComp />
-            <DeleteComp />
           </Card.Body>
         </Card>
       </Container>
